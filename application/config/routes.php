@@ -54,7 +54,13 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /*
- * Registration rout
+ * Registration route
  */
 
 $route['sign-up']="registration/index";
+
+/*
+ *  Security route
+ */
+
+$route['login']="security/index";

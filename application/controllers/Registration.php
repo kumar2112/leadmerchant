@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Registration extends CI_Controller {
+class Registration extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,6 @@ class Registration extends CI_Controller {
             if(!empty($form_data)){
                 
             }
-            
-            $this->load->view("registration/registration_content");
+            $this->render("registration/registration_content");
 	}
 }

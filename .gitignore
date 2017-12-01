@@ -1,7 +1,7 @@
 .DS_Store
 
-application/cache/*
-!application/cache/index.html
+/application/cache/*
+/application/cache/index.html
 
 application/logs/*
 !application/logs/index.html
@@ -10,15 +10,16 @@ application/logs/*
 
 composer.lock
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+/user_guide_src/build/*
+/user_guide_src/cilexer/build/*
+/user_guide_src/cilexer/dist/*
+/user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 
 # IDE Files
 #-------------------------
 /nbproject/
+/gp/
 .idea/*
 
 ## Sublime Text cache files

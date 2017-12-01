@@ -1,54 +1,47 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>join us</title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
-         <!-- jQuery library -->
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="row">
-                    <div class="col-md-8 col-offset-2">
-                        <div class="row">
-                            <h3 class="text-center">Join Us</h3>
-                        </div>
-                        <?php echo form_open('sign-up',array('name'=>'registration-form')); ?>
-                            <div class="form-group">
-                                <?php echo form_label("Enter your email","" ,array()) ?>
-                                <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
-                            </div>
-                            <div class="form-group">
-                                 <?php echo form_label("Enter your first name","" ,array()) ?>
-                                <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
-                            </div>
-                            <div class="form-group">
-                                <?php echo form_label("Enter your last name","" ,array()) ?>
-                                <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
-                            </div>
-                            <div class="form-group">
-                                <?php echo form_label("Tell us your intrest","" ,array()) ?>
-                                <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
-                            </div>
-                            <div class="form-group">
-                                <?php echo form_label("Tell us what your are","" ,array()) ?>
-                                <?php echo form_dropdown('',array('Seller','Buyer'),'',array('class'=>'form-control')); ?>
-                            </div>
-                            <div class="form-group">
-                                <?php echo form_submit('sign-up-button', 'Save',array('class'=>'btn btn-default btn-block active')); ?>
-                            </div>
-                        <?php echo form_close(); ?>
+<section id="contact-page">
+    <div class="container">
+        <div class="center">        
+            <h2>Drop Your Message</h2>
+            <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div> 
+        <div class="row contact-wrap"> 
+            <div class="status alert alert-success" style="display: none"></div>
+            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+            <?php echo form_open('sign-up',array('id'=>"main-contact-form" ,'class'=>"contact-form", 'name'=>"contact-form")); ?>
+                <div class="col-sm-5 col-sm-offset-1">
+                    <div class="form-group">
+                        <?php echo form_label("Enter your email*","" ,array()) ?>
+                        <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo form_label("Enter your first name.*","" ,array()) ?>
+                        <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo form_label("Enter your last name.*","" ,array()) ?>
+                        <?php echo form_input(array('type'=>'email','class'=>'form-control')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo form_label("Enter your phone no.*","" ,array()) ?>
+                        <?php echo form_input(array('type'=>'text','class'=>'form-control')); ?>
+                    </div>                        
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <?php echo form_label("Tell us what your are.*","" ,array()) ?>
+                        <?php echo form_dropdown('',array('Seller','Buyer'),'',array('class'=>'form-control')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo form_label("Give your Short Description (optional)","" ,array()) ?>
+                        <?php echo form_textarea('','',array('rows'=>'8','class'=>'form-control')); ?>
+                    </div>                        
+                    <div class="form-group">
+                        <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">JOIN US</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
-                       
+            <?php echo form_close(); ?>
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#contact-page-->
+         
+           
