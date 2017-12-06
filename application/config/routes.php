@@ -58,6 +58,7 @@ $route['translate_uri_dashes'] = FALSE;
  */
 
 $route['sign-up']="registration/index";
+$route['sign-up-process']="registration/registration_process";
 
 /*
  *  Security route

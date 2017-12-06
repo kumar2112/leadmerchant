@@ -14,16 +14,18 @@
 class User_model extends CI_Model {
     
     public $id;
-    public $username;
+    public $userName;
     public $email;
     public $secondaryEmail;
     public $password;
-    public $firstname;
-    public $lastname;
-    public $usertype;
-    public $user_enabled;
-    public $emailverificationtoken;
-    public $userdisabledreason;
+    public $firstName;
+    public $lastName;
+    public $phone;
+    public $userType;
+    public $description;
+    public $userEnabled;
+    public $emailVerificationToken;
+    public $userDisabledReason;
     public $createdAt;
     public $updatedAt;
     
@@ -36,64 +38,122 @@ class User_model extends CI_Model {
         return $this;
     }
     
-    public function getUsername($id){
-        $this->id=$id;
-        return $this;
+    public function getUserName(){
+        return $this->userName;
+        
     }
-    public function setUsername($id){
-        $this->id=$id;
-        return $this;
-    }
-    
-    public function setEmail($id){
-        $this->id=$id;
-        return $this;
-    }
-    public function getEmal($id){
-        $this->id=$id;
+    public function setUserName($username){
+        $this->userName=$username;
         return $this;
     }
     
-    public function setSecondaryEmail($id){
-        $this->id=$id;
+    public function setEmail($email){
+        $this->email=$email;
         return $this;
     }
-    public function getSecondaryEmail($id){
-        $this->id=$id;
+    public function getEmail(){
+       
+        return $this->email;
+    }
+    
+    public function setSecondaryEmail($secondaryEmail){
+        $this->secondaryEmail=$secondaryEmail;
+        return $this;
+    }
+    public function getSecondaryEmail(){
+        return $this->secondaryEmail;
+    }
+    
+    public function setPassword($password){
+         $this->password=$password;
+         return $this;
+    }
+    
+    public function getPassword(){
+        return $this->password;
+    }
+    
+    public function setFirstName($firstname){
+         $this->firstName=$firstname;
+         return $this;
+    }
+    
+    public function getFirstName(){
+         return $this->firstName;
+    }
+    
+    public function setLastName($lastname){
+        $this->lastName=$lastname;
         return $this;
     }
     
-    public function getSecondaryEmail($id){
-        $this->id=$id;
+    public function getLastName(){
+        return $this->lastName;
+    }
+    
+    public function setPhone($phone){
+        $this->phone=$phone;
         return $this;
     }
     
-    public function getSecondaryEmail($id){
-        $this->id=$id;
+    public function getPhone(){
+        return $this->phone;
+    }
+    
+    public function setUserType($usertype){
+        $this->userType=$usertype;
         return $this;
     }
     
-    public function getSecondaryEmail($id){
-        $this->id=$id;
+    public function getUserType(){
+        return $this->userType;
+    }
+    
+    public function setDescription($description){
+         $this->description=$description;
+         return $this;
+    }
+    
+    public function getDescription(){
+         return $this->description;
+    }
+    
+    public function setUserEnabled($enabled){
+        $this->userEnabled=$enabled;
+        return $this;
+    }
+   
+    public function getUserEnabled(){
+        return $this->userEnabled;
+    }
+    
+    public function setEmailVerificationToken($token){
+        $this->emailVerificationToken=$token;
         return $this;
     }
     
-    public function getSecondaryEmail($id){
-        $this->id=$id;
+    public function getEmailVeriFicationToken(){
+         return $this->emailVerificationToken;
+    }
+    
+    public function setCreatedAt($date){
+        $this->createdAt=$date;
         return $this;
     }
     
-    public function setUdatedAt($date_time){
-        $this->id=$id;
+    public function getCreatedAt(){
+         return $this->createdAt;
+    }
+    
+    public function setUpdatedAt($date){
+        $this->updatedAt=$date;
         return $this;
     }
     
-    public function getUdatedAt(){
-        $this->id=$id;
-        return $this;
+    public function getUpdatedAt(){
+         return $this->updatedAt;
     }
-    
-    
-    
-    
+    public function saveUser(User_model $user){
+        $this->db->insert('lm_user', $user);
+    }
 }

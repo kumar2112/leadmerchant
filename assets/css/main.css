@@ -1433,7 +1433,7 @@ ul.social_icons li  a i{
 
 
 #contact-page{
-  padding-top: 0;
+  padding-top: 150px; /*Initial Padding Was 0 changed*/
   background:#fff;
 }
 
