@@ -6,15 +6,15 @@
             </div> .
             <div class="status alert alert-success" style="display: none"></div>
             <div class="col-md-4 col-md-offset-4">
-            <?php echo form_open('sign-up',array('id'=>"main-contact-form" ,'class'=>"contact-form", 'name'=>"contact-form")); ?>
+            <?php echo form_open('login-process',array('id'=>"log_in_form" ,'class'=>"contact-form", 'name'=>"log_in_form")); ?>
                 <div class="col-sm-11 col-sm-offset-1">
                     <div class="form-group">
                         <?php echo form_label("Username*","" ,array()) ?>
-                        <?php echo form_input(array('type'=>'text','class'=>'form-control')); ?>
+                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'username')); ?>
                     </div>
                     <div class="form-group">
                         <?php echo form_label("Password*","" ,array()) ?>
-                        <?php echo form_input(array('type'=>'password','class'=>'form-control')); ?>
+                        <?php echo form_input(array('type'=>'password','class'=>'form-control','name'=>'password')); ?>
                     </div>
                 </div>
                 <div class="col-sm-11 col-sm-offset-1">

@@ -26,6 +26,7 @@ class Registration extends MY_Controller {
         public function registration_process(){
             $form_data = $this->input->post();
             $this->load->model('user_model');
+            $jsonResponse=array();
             if(!empty($form_data)){
                 $email=$form_data['email'];
                 $firstName=$form_data['firstname'];
@@ -35,18 +36,24 @@ class Registration extends MY_Controller {
                 $userType=$form_data["usertype"];
                 
                 $user=$this->user_model;
+                
                 $user->setUserName($email);
                 $user->setEmail($email);
                 $user->setFirstName($firstName);
                 $user->setLastName($lastName);
                 $user->setUserType($userType);
                 $user->setCreatedAt(date('Y-m-d'));
-                
-                $user->saveUser($user);
-                
-                echo json_encode(array('status'=>"Account Created SuccessFully"));
-                
-                
+                if($user->is_unique('username',$email) || $user->is_unique('email',$email)){
+                    $user->saveUser($user);
+                    $jsonResponse['status']="success";
+                    $jsonResponse['responseText']="Thank you for joining us";
+                }else{
+                    $jsonResponse['status']="failed";
+                    $jsonResponse['responseText']="An account is already associated with given email";
+                }
+                echo json_encode($jsonResponse);
             }
+            
+            
         }
 }

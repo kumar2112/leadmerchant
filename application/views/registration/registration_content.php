@@ -10,29 +10,29 @@
                 <div class="col-sm-5 col-sm-offset-1">
                     <div class="form-group">
                         <?php echo form_label("Enter your email*","" ,array()) ?>
-                        <?php echo form_input(array('type'=>'email','class'=>'form-control','name'=>'email')); ?>
+                        <?php echo form_input(array('type'=>'email','class'=>'form-control','name'=>'email','required'=>'required')); ?>
                     </div>
                     <div class="form-group">
                         <?php echo form_label("Enter your first name.*","" ,array()) ?>
-                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'firstname')); ?>
+                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'firstname','required'=>'required')); ?>
                     </div>
                     <div class="form-group">
                         <?php echo form_label("Enter your last name.*","" ,array()) ?>
-                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'lastname')); ?>
+                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'lastname','required'=>'required')); ?>
                     </div>
                     <div class="form-group">
                         <?php echo form_label("Enter your phone no.*","" ,array()) ?>
-                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'phone')); ?>
+                        <?php echo form_input(array('type'=>'text','class'=>'form-control','name'=>'phone','onkeypress'=>'return event.charCode >= 48 && event.charCode <= 57','required'=>'required')); ?>
                     </div>                        
                 </div>
                 <div class="col-sm-5">
                     <div class="form-group">
                         <?php echo form_label("Tell us what your are.*","" ,array()) ?>
-                        <?php echo form_dropdown('',array('Seller','Buyer'),'',array('class'=>'form-control','name'=>'usertype')); ?>
+                        <?php echo form_dropdown('',array('Seller','Buyer'),'',array('class'=>'form-control','name'=>'usertype','required'=>'required')); ?>
                     </div>
                     <div class="form-group">
                         <?php echo form_label("Give your Short Description (optional)","" ,array()) ?>
-                        <?php echo form_textarea('','',array('rows'=>'8','class'=>'form-control','name'=>'description')); ?>
+                        <?php echo form_textarea('','',array('rows'=>'8','class'=>'form-control','name'=>'description','required'=>'required')); ?>
                     </div>                        
                     <div class="form-group">
                         <button type="submit" name="submit" class="btn btn-primary btn-lg">JOIN US</button>

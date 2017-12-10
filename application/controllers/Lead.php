@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Security extends MY_Controller {
+class Lead extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,12 +19,7 @@ class Security extends MY_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index(){
-            $this->load->helper('form');
             
-            $form_data = $this->input->post();
-            if(!empty($form_data)){
-                
-            }
-            $this->render("security/login_content");
+            $this->render("lead/index");
 	}
 }

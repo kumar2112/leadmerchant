@@ -154,6 +154,21 @@ class User_model extends CI_Model {
          return $this->updatedAt;
     }
     public function saveUser(User_model $user){
-        $this->db->insert('lm_user', $user);
+        if($this->db->insert('lm_user', $user)){
+            return true;
+        }
+        return $error = $this->db->error(); ;
+    }
+    
+    public function is_unique($field,$value){
+        $uniquFields=array('userName','email');
+        if(in_array($field, $uniquFields)){
+            $count = $this->db->where($field,$value)->from("lm_user")->count_all_results();;
+            if($count<1){
+                return true;
+            }
+                              
+        }
+        return false;
     }
 }

@@ -27,4 +27,23 @@ class Security extends MY_Controller {
             }
             $this->render("security/login_content");
 	}
+        
+        public function login_process(){
+            $form_data = $this->input->post();
+            $this->load->model('user_model');
+            $jsonResponse=array();
+            if(!empty($form_data)){
+                $user=$this->user_model;
+                $username=$form_data['username'];
+                $password=$form_data['password'];
+                if(!$user->is_unique('username',$username) || !$user->is_unique('email',$username)){
+                    $jsonResponse['status']="failed";
+                    $jsonResponse['responseText']="No profile is found please check your email";
+                }else{
+                    $jsonResponse['status']="success";
+                    $jsonResponse['responseText']="login success please wwait.";
+                }
+                echo json_encode($jsonResponse);
+            }
+        }
 }
