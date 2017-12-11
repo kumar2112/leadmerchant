@@ -19,7 +19,20 @@ class Lead extends MY_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index(){
-            
+            $this->load->model('category_model');
+            $catgoryModal=$this->category_model;
+            $categories=$catgoryModal->getCategories();
+            $view_data=array();
+            $this->data['categories']=$categories;
             $this->render("lead/index");
 	}
+        
+        public function show($cat_slug){
+            //echo $cat_slug;
+            $this->render("lead/show");
+        }
+        
+        public function add(){
+            $this->render("lead/addnewbucket");
+        }
 }

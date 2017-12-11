@@ -13,8 +13,8 @@
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="welcome">HOME</a></li>
-                    <li><a href="leads">BROWSE LEADS</a></li>
-                    <li><a href="about">SELL  LEADS</a></li>
+                    <li><a href="<?php echo site_url('leads');?>">BROWSE LEADS</a></li>
+                    <li><a href="<?php echo site_url('leads/addnewbucket') ?>">SELL  LEADS</a></li>
 <!--                    <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>-->
                     <li><a href="login">LOGIN</a></li> 
